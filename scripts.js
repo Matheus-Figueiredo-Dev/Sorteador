@@ -1,62 +1,55 @@
-const list = document.querySelector('ul')
-const buttonShowAll = document.querySelector('.show-all')
-const buttonMapAll = document.querySelector('.map-all')
-const buttonSumAll = document.querySelector('.sum-all')
-const buttonFilterVegan = document.querySelector('.filter-vegan')
+const result = document.querySelector(".result")
+const humanScore = document.getElementById("human-score")
+const machineScore = document.getElementById("machine-score")
 
-function formatCurrent(value) { //Formatar para moeda
-    return value.toLocaleString('pt-br',
-        {
-            style: 'currency',
-            currency: 'BRL'
-        });
+let humanScoreNumber = 0
+let machineScoreNumber = 0
+
+const GAME_OPTIONS = {
+    ROCK: "rock",
+    PAPER: "paper",
+    SCISSORS: "scissors"
 }
 
-function showAll(productsArray) {
-    let myLi = '' //Resetar a contagem antes de alterar algum dado
+/*
+    ENUM, em casos de programas muito grande, o ENUM é de grande ajuda, pois caso algum dos nomes saiam errado, 
+    ou seja necessário mudar um dos nomes do programa, ao invés de mudar um por um, 
+    o ENUM é uma variável que você guarda esses nomes, e depois coloca ela no programa, que já substitui os nomes, 
+    assim reduz bastante a chance de erros.
+    A váriavel é em maiúsculo com _ separando as palavras
+*/
 
-    productsArray.forEach(products => {
-        myLi +=
-            `
-        <li>
-                <img src=${products.src}>
-                <p> ${products.name} </p>
-                <p class="item-price"> ${formatCurrent(products.price)} </p>
-            </li>
-        `
-
-        list.innerHTML = myLi
-    });
-
+const playHuman = (humanChoice) => {
+    playTheGame(humanChoice, playMachine())
 }
 
-function mapAll() {
-    const newPrice = menuOptions.map(discount => ({
-        ...discount,
-        price: discount.price * 0.9,
-    }))
+const playMachine = () => {
+    const choices = [GAME_OPTIONS.ROCK, GAME_OPTIONS.PAPER, GAME_OPTIONS.SCISSORS]
+    const randomNumber = Math.floor(Math.random() * 3)
+    console.log(randomNumber)
 
-    showAll(newPrice)
+    return choices[randomNumber]
 }
 
-function sumAll() {
-    const totalPrice = menuOptions.reduce((acc, current) => acc + current.price, 0)
-    list.innerHTML =
-        `
-        <li>
-            <p> O valor total da compra é de ${formatCurrent(totalPrice)} </p>
-        </li>
-        `
+const playTheGame = (human, machine) => {
+    console.log("Humano: " + human, "Máquina: " + machine)
+
+    if (human === machine) {
+        result.innerHTML = "Empate!"
+    }
+    else if (
+        (human === GAME_OPTIONS.ROCK && machine === GAME_OPTIONS.SCISSORS) ||
+        (human === GAME_OPTIONS.PAPER && machine === GAME_OPTIONS.ROCK) ||
+        (human === GAME_OPTIONS.SCISSORS && machine === GAME_OPTIONS.PAPER)
+    ) {
+        humanScoreNumber++
+        humanScore.innerHTML = humanScoreNumber
+        result.innerHTML = "Você ganhou!"
+    }
+
+    else {
+        machineScoreNumber++
+        machineScore.innerHTML = machineScoreNumber
+        result.innerHTML = "Você perdeu!"
+    }
 }
-
-function filterVegan() {
-    const itemVegan = menuOptions.filter((item) => item.vegan)//Por padrão o valor já vem como true
-    showAll(menuOptions)
-    showAll(itemVegan)
-}
-
-buttonShowAll.addEventListener('click', () => showAll(menuOptions)) //menuOptions é chamado nesta função para poder retornar dados ao clicar no botão, necessário uma arrow function pois caso deixe apenas com parenteses, o site mostra as informações direto na tela, sem precisar clicar no botão
-buttonMapAll.addEventListener('click', mapAll)
-buttonSumAll.addEventListener('click', sumAll)
-buttonFilterVegan.addEventListener('click', filterVegan)
-

@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Hamburgueria</title>
+    <link rel="stylesheet" href="./jokenpo.css">
+    <title>Jokenpo</title>
 </head>
 
 <body>
-    <div class="container-buttons">
-        <button class="show-all"> Delícias da casa </button>
-        <button class="map-all">  Cupom 10% de desconto </button>
-        <button class="sum-all"> Valor total dos produtos </button>
-        <button class="filter-vegan"> Para veganos </button>
+    <div class="container">
+        <h1> Jokenpô </h1>
+
+        <div class="buttons">
+            <button id="rock" onclick="playHuman('rock')">&#x1F44A; </button>
+            <button id="paper" onclick="playHuman('paper')">&#x1F590; </button>
+            <button id="scissors" onclick="playHuman('scissors')">&#x270C; </button>
+        </div>
+        <p class="result"> </p>
+
+        <p class="your-score"> Sua pontuação: <span id="human-score"> 0 </span> </p>
+        <p class="machine-score"> Pontuação da IA: <span id="machine-score"> 0 </span> </p>
     </div>
 
-    <ul>
-        
-    </ul>
+    <script src="./jokenpo.js"> </script>
 </body>
-
-<script src="./products.js"> </script>
-<script src="./scripts.js"> </script>
 
 </html>
