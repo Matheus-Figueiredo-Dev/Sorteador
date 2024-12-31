@@ -4,26 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Jokenpo</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Sorteador</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1> Jokenpô </h1>
-
-        <div class="buttons">
-            <button id="rock" onclick="playHuman('rock')">&#x1F44A; </button>
-            <button id="paper" onclick="playHuman('paper')">&#x1F590; </button>
-            <button id="scissors" onclick="playHuman('scissors')">&#x270C; </button>
-        </div>
-        <p class="result"> </p>
-
-        <p class="your-score"> Sua pontuação: <span id="human-score"> 0 </span> </p>
-        <p class="machine-score"> Pontuação da IA: <span id="machine-score"> 0 </span> </p>
+    <img src="./img.png" alt="dados">
+    <p> Sortear número </p>
+    <input placeholder="Quantidade" class="input-quantity" type="number" min="1">
+    <div>
+        <input placeholder="Entre" class="input-min" type="number">
+        <input placeholder="E" class="input-max" type="number">
     </div>
 
-    <script src="./scripts.js"> </script>
+    <button onclick="generateNumber()"> Sortear </button>
+    <p class="result-display">Os números sorteados serão exibidos aqui</p>
 </body>
+
+<script src="./scripts.js"> </script>
 
 </html>

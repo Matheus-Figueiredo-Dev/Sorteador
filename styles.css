@@ -1,67 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: "roboto", sans-serif;
 }
 
 body {
     background: #000000;
-    background-size: cover;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     min-height: 100vh;
 }
 
-.container {
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 126px;
+    margin-bottom: 26px;
 }
 
-button {
-    padding: 10px;
-    font-size: 50px;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-}
-
-button:hover {
+input {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    height: 74px;
+    width: 342px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    color: #FFFFFF;
     opacity: 0.7;
 }
 
-.buttons {
-    margin: 30px 0px;
-    display: flex;
-    gap: 40px;
+.input-min {
+    margin-right: 62px;
 }
 
-#rock {
-    background-color: #e61818;
+.input-quantity {
+    margin-bottom: 62px;
 }
 
-#paper {
-    background-color: #15d82f;
+button {
+    background: crimson;
+    box-shadow: 0px 18px 40px rgba(212, 16, 65, 0.35);
+    border-radius: 10px;
+    width: 342px;
+    height: 72px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 80px;
+    cursor: pointer;
 }
 
-#scissors {
-    background-color: #121f9c;
+button:hover {
+    opacity: 0.9;
 }
 
-p {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.your-score span {
-    color: rgb(236, 41, 41);
-}
-
-.machine-score span {
-    color: rgb(13, 13, 184);
+button:active {
+    opacity: 0.8;
 }
