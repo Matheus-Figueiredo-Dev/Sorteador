@@ -1,0 +1,1 @@
+Projeto que fiz como aprendizado, onde o objetivo é sortear números dentro de um escopo, utilizando principalmente o método Math para poder estar fazendo a seleção aleatoriamente dos números, aplicando em conjunto o if e else para poder fazer o sorteio dos números.
