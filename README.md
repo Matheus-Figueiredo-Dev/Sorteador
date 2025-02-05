@@ -6,19 +6,7 @@ HTML para estrutura da aplicação;
 CSS para estilização (principalmente o design da interface);
 JavaScript para a lógica de sorteio dos números;
 
-Como Rodar o Projeto
-
-Clone o Repositório:
-
-git clone https://github.com/MatheusFigueiredo1001/JavaScript-Projeto-Sorteador-de-Numeros.git
-
-Acesse a Pasta do Projeto:
-
-cd sorteador-numeros
-
-Abra o Arquivo HTML no Navegador:
-
-O projeto é estático, então não há necessidade de instalação de dependências.
+O projeto estará disponível em https://matheusfigueiredo1001.github.io/Sorteador-de-Numeros/
 
 Exemplo de Uso:
 Defina um intervalo de números (ex: 1 a 100);
